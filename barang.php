@@ -41,7 +41,26 @@
                     $no += 1;                   
                     }
                     ?>
+
+
+                        <?php
+                        require "koneksi.php";
+                        session_start();
+
+                        if (!isset($_SESSION['username'])) {
+                            header("location:login.php");
+                        }
+                    ?>
+
             </tbody>
+            <body>
+                <h1>halaman barang</h1>
+                <h2>selamat datang, <?=$_SESSION['username']?></h2>
+                <br>
+                <a href="logout.php">logout</a>
+
+                <a href="barang-tambah.php">tambah</a>
+            </body>
         </table>
     </body>
 </html>
